@@ -1,0 +1,19 @@
+.button {
+  background: #debf79;
+  outline: none;
+  border: none;
+  display: flex;
+  width: 130px;
+  height: 45px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-style: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: white;
+}
