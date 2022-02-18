@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Header from "../components/Header/Header.component";
 import BoxContainer from "../components/BoxContainer/BoxContainer.component";
+import FooterText from "../components/FooterText/FooterText.component";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       </Head>
       <Header />
       <BoxContainer />
+      <FooterText />
     </div>
   );
 }
