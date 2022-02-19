@@ -1,0 +1,28 @@
+.hero {
+  width: 50%;
+  margin-right: 150px;
+  color: #ffffff;
+}
+
+.heading {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 72px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.heading > span {
+  border-bottom: 4px solid #debf79;
+  padding: 4px 0;
+}
+
+.paragraph {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 30px;
+  text-align: justify;
+}

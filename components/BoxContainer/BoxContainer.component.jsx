@@ -9,7 +9,7 @@ const BoxContainer = () => {
         <img className={styles.image} src="/images/Talkie.png" alt="talkie" />
         <div className={styles.text}>
           <h2 className={styles.boxHeading}>Heading Two</h2>
-          <p class={styles.boxParagraph}>
+          <p className={styles.boxParagraph}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore
           </p>

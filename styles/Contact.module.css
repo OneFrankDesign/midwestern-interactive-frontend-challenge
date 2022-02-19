@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+.container {
+  width: 1440px;
+  /* Width doesn't feel responsive since it creates and scroll bars for x and y offset but it's the dimensions of the figma file */
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  padding: 52px 98px;
+  background: linear-gradient(to right, #222222, #222222 50%, #fff, #fff 50%);
+
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+}
