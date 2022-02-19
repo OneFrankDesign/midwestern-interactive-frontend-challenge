@@ -17,3 +17,9 @@
   line-height: 21px;
   color: white;
 }
+.button:hover {
+  background: #ffffff;
+  color: #debf79;
+  border: 1px solid #debf79;
+  cursor: pointer;
+}
