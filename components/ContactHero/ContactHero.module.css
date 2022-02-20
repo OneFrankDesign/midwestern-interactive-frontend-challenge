@@ -12,9 +12,11 @@
   margin-bottom: 30px;
 }
 
-.heading > span {
-  border-bottom: 4px solid #debf79;
-  padding: 4px 0;
+.headingUnderline {
+  width: 165px;
+  height: 4px;
+  background-color: #debf79;
+  margin-bottom: 20px;
 }
 
 .paragraph {
@@ -25,4 +27,34 @@
   line-height: 25px;
   margin-bottom: 30px;
   text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .heading {
+    font-size: 48px;
+    line-height: 54px;
+    margin-left: 20px;
+  }
+
+  .headingUnderline {
+    width: 211px;
+    height: 4px;
+    background-color: #debf79;
+
+    margin-bottom: 20px;
+  }
+
+  .paragraph {
+    max-width: 353px;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    text-align: justify;
+  }
 }

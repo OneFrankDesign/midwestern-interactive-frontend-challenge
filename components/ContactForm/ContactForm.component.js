@@ -42,7 +42,7 @@ const ContactForm = () => {
   return (
     <div className={styles.formSection}>
       <h2 className={styles.subheading}>Heading Two</h2>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formrow}>
           <div className={styles.formGroup}>
             <label className={styles.hidden} htmlFor="first_name">
