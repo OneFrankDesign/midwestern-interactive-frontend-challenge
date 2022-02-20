@@ -11,28 +11,70 @@ const ContactForm = () => {
     email: "",
     message: "",
   });
+  const [formErrors, setFormErrors] = useState({});
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     const apiUrl = "https://api.mwi.dev/contact";
     e.preventDefault();
-    Axios.post(apiUrl, {
-      first_name: formData.first_name,
-      last_name: formData.last_name,
-      title: formData.title,
-      email: formData.email,
-      message: formData.message,
-    }).then((res) => {
-      console.log(res);
-    });
 
-    setFormData({
-      first_name: "",
-      last_name: "",
-      title: "",
-      email: "",
-      message: "",
-    });
+    setFormErrors(validateForm(formData));
+    setFormSubmitted(true);
+
+    if (Object.keys(formErrors).length === 0 && formSubmitted) {
+      Axios.post(apiUrl, {
+        first_name: formData.first_name,
+        last_name: formData.last_name,
+        title: formData.title,
+        email: formData.email,
+        message: formData.message,
+      }).then((res) => {
+        console.log(res);
+      });
+
+      setFormData({
+        first_name: "",
+        last_name: "",
+        title: "",
+        email: "",
+        message: "",
+      });
+
+      setFormSubmitted(false);
+    }
   };
+
+  const validateForm = (values) => {
+    const errors = {};
+    const regex =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (!values.first_name) {
+      errors.first_name = "First Name required";
+    }
+    if (!values.last_name) {
+      errors.last_name = "Last Name required";
+    }
+    if (!values.title) {
+      errors.title = "Title required";
+    }
+    if (!values.email) {
+      errors.email = "Email required";
+    } else if (!regex.test(values.email)) {
+      errors.email = "Email is invalid";
+    }
+    if (!values.message) {
+      errors.message = "Message required";
+    }
+
+    if (errors.length > 0) {
+      this.setState({
+        inputClass: "invalid",
+      });
+    }
+    return errors;
+  };
+
   const handleChange = (e) => {
     const newFormData = { ...formData };
     newFormData[e.target.id] = e.target.value;
@@ -49,26 +91,53 @@ const ContactForm = () => {
               First Name
             </label>
             <input
-              className={styles.input}
+              className={
+                formErrors.first_name && formSubmitted
+                  ? styles.invalid
+                  : styles.input
+              }
               type="text"
               id="first_name"
               value={formData.first_name}
               placeholder={"First Name"}
               onChange={handleChange}
             />
+
+            <small
+              className={
+                formErrors.first_name && formSubmitted
+                  ? styles.error
+                  : styles.hidden
+              }
+            >
+              Required
+            </small>
           </div>
           <div className={styles.formGroup}>
             <label className={styles.hidden} htmlFor="last_name">
               Last Name
             </label>
             <input
-              className={styles.input}
+              className={
+                formErrors.first_name && formSubmitted
+                  ? styles.invalid
+                  : styles.input
+              }
               type="text"
               id="last_name"
               placeholder={"Last Name"}
               value={formData.last_name}
               onChange={handleChange}
             />
+            <small
+              className={
+                formErrors.last_name && formSubmitted
+                  ? styles.error
+                  : styles.hidden
+              }
+            >
+              Required
+            </small>
           </div>
         </div>
         <div className={styles.formrow}>
@@ -77,26 +146,48 @@ const ContactForm = () => {
               Title
             </label>
             <input
-              className={styles.input}
+              className={
+                formErrors.first_name && formSubmitted
+                  ? styles.invalid
+                  : styles.input
+              }
               type="text"
               id="title"
               value={formData.title}
               placeholder={"Title"}
               onChange={handleChange}
             />
+            <small
+              className={
+                formErrors.title && formSubmitted ? styles.error : styles.hidden
+              }
+            >
+              Required
+            </small>
           </div>
           <div className={styles.formGroup}>
             <label className={styles.hidden} htmlFor="email">
               Email
             </label>
             <input
-              className={styles.input}
+              className={
+                formErrors.first_name && formSubmitted
+                  ? styles.invalid
+                  : styles.input
+              }
               type="email"
               id="email"
               value={formData.email}
               placeholder={"Email"}
               onChange={handleChange}
             />
+            <small
+              className={
+                formErrors.email && formSubmitted ? styles.error : styles.hidden
+              }
+            >
+              Required
+            </small>
           </div>
         </div>
         <div className={styles.formrow}>
