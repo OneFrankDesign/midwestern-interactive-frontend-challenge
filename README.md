@@ -1,34 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Midwestern Front-End Benchmark assessment
 
-## Getting Started
+### Built using React on the NextJS library per assessment link resources
 
-First, run the development server:
+Technologies involved React, NextJs, CSS, and Axios. Connected to the Midwestern Interactive API for content for the home and contact page.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+The first challenge was to programmatically build out the project according to the technologies specified by the contact.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The second was to add break points for desktop and mobile view.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The third was to solve a javascript puzzle which was to take in two JavaScript objects, remove the duplicates, add the results to an array, and then output them as a list when clicked and then notify a user when it had been completed.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The fourth was to integrate with the specified api to generate content for the homepage, and contact page.
